@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamentos Corso 2025</title>
+    <!-- Inclui Tailwind CSS via CDN para facilitar o uso -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Novas fontes para um visual mais refinado -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Fundo cinza escuro para um visual profissional */
+            color: #e2e8f0; /* Cor do texto principal */
+        }
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Estilo para a imagem do produto no cartão */
+        .product-card-image {
+            width: 100%;
+            height: 200px; /* Altura fixa para as imagens */
+            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+        /* Estilo para a imagem na página de detalhes */
+        .product-detail-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        /* Estilo para o carrossel */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 9999px; /* rounded-full */
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel-button.left {
+            left: 1rem;
+        }
+        .carousel-button.right {
+            right: 1rem;
+        }
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+        .carousel-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 9999px; /* rounded-full */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-dot.active {
+            background-color: #f59e0b; /* Cor de destaque do logo */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Cabeçalho com paleta de cores escura -->
+        <header class="bg-gray-900 text-white shadow-lg py-6 px-8 rounded-b-xl">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <img src="https://i.ibb.co/cc0xtBDL/logo-Corso-transparente-2.png" alt="Logo Corso" class="h-14 w-auto">
+                    <h1 class="text-4xl font-extrabold tracking-tight">Lançamentos Corso 2025</h1>
+                </div>
+                <nav>
+                    <ul class="flex space-x-8">
+                        <li><a href="#cozinhas" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 font-medium text-lg">Cozinhas</a></li>
+                        <li><a href="#banheiro" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 font-medium text-lg">Banheiro</a></li>
+                        <li><a href="#sinteticos" class="text-gray-300 hover:text-amber-400 transition-colors duration-300 font-medium text-lg">Sintéticos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Seção do Catálogo de Produtos (Visível por padrão) -->
+        <div id="catalogView" class="flex-grow container mx-auto p-8">
+            <!-- Texto de apresentação da nova coleção -->
+            <section class="mb-16">
+                <p class="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                    Nós da Corso temos o prazer de apresentar a coleção 2025, desenvolvida para ser sua nova principal ferramenta de vendas. 
+                    Com um design inteligente em móveis e sintéticos, esta linha é focada na praticidade do dia a dia, oferecendo soluções de armazenamento que mantêm o essencial sempre à mão, aproveitando cada centímetro de cada projeto com beleza e utilidade.
+                </p>
+            </section>
+
+            <!-- Seção de Cozinhas -->
+            <section id="cozinhas" class="mb-16">
+                <h2 class="text-4xl font-extrabold text-white mb-10 text-left">Cozinhas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Cartão de Produto 1 - Cozinhas -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/BVr5jmJG/20250807-2152-Gabinete-de-Cozinha-Luxuoso-remix-01k23jgjake5k8dnh9p6da5dps.png" alt="Gabinete de Cozinha Luxuoso" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Vitta</h3>
+                            <p class="text-gray-400 text-sm mb-4">Módulos de armário que se encaixam em qualquer ambiente. A linha Vitta une flexibilidade e design para sua cozinha.</p>
+                            <button onclick="showProductDetails('cozinha-modulare')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <!-- Cartão de Produto 2 - Cozinhas -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/9HJ313Fb/20250807-2158-Pia-com-Torneira-remix-01k23jw31me9etfwe8m5x32ww9.png" alt="Pia com Torneira" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Pratik</h3>
+                            <p class="text-gray-400 text-sm mb-4">Solução completa para seu espaço gourmet. Bancadas e cubas com design moderno e materiais de alta durabilidade.</p>
+                            <button onclick="showProductDetails('cozinha-quartzo')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <!-- Cartão de Produto 3 - Cozinhas -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/p62JcFdp/20250807-2156-Gabinete-em-Cozinha-Sofisticada-remix-01k23jqqt7fs7snkygasw5t2az.png" alt="Gabinete em Cozinha Sofisticada" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Recife Novo</h3>
+                            <p class="text-gray-400 text-sm mb-4">A união do rústico com o sofisticado. Acabamento em madeira, bancadas em mármore sintético e cubas de aço inox.</p>
+                            <button onclick="showProductDetails('cozinha-pia')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção de Móveis de Banheiro -->
+            <section id="banheiro" class="mb-16">
+                <h2 class="text-4xl font-extrabold text-white mb-10 text-left">Móveis de Banheiro</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Cartão de Produto 1 - Banheiro -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/C3FC0h4J/20250721-1425-Banheiro-Decorado-Moderno-remix-01k0q00k8tf5e9m93yape1675w.png" alt="Armário de Banheiro Moderno" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Linha Essenzi</h3>
+                            <p class="text-gray-400 text-sm mb-4">Gavetas amplas, nichos para que o essencial fique à mão, espelheira ampla, lavatório com acabamento exclusivo Corso. Conheça a linha Essenzi! </p>
+                            <button onclick="showProductDetails('banheiro-essenzi')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <!-- Cartão de Produto 2 - Banheiro -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/Wvg0z697/20250721-1216-Banheiro-Luxuoso-com-Gabinete-remix-01k0prn8reecaskadnn95tetfh.png" alt="Gabinete de Banheiro com Cuba" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Kit Lume</h3>
+                            <p class="text-gray-400 text-sm mb-4">Gabinete com cuba de sobrepor e gavetas espaçosas. Design moderno e funcional.</p>
+                            <button onclick="showProductDetails('banheiro-lume')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <!-- Cartão de Produto 3 - Banheiro -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/yBgFsQtD/20250721-1426-Gabinete-de-Banheiro-Suspenso-remix-01k0q023c7f878annycnq15y2v.png" alt="Espelheira com Nichos" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Kit Unique</h3>
+                            <p class="text-gray-400 text-sm mb-4">Espelheira com nichos laterais para organização e acabamento em madeira.</p>
+                            <button onclick="showProductDetails('banheiro-unique')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <!-- Cartão de Produto 4 - Banheiro -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/chPSNb15/20250807-2137-Banheiro-Moderno-Escandinavo-remix-01k23hpa36ea785s38yzrheqaq-1.png" alt="Kit Luna" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Kit Luna</h3>
+                            <p class="text-gray-400 text-sm mb-4">Aproveitamento total do espaço do toucador para o máximo de organização, linhas elegantes e cores modernas: Conheça o Kit Luna!</p>
+                            <button onclick="showProductDetails('banheiro-luna')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Materiais Sintéticos -->
+            <section id="sinteticos" class="mb-16">
+                <h2 class="text-4xl font-extrabold text-white mb-10 text-left">Materiais Sintéticos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Cartão de Produto 1 - Lavatório Essenzi -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/JWZvnz79/20250807-2242-Lavat-rio-Iluminado-em-Destaque-remix-01k23nc7p0ekdb4s972xw3a309.png" alt="Lavatório Essenzi" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Lavatório Essenzi</h3>
+                            <p class="text-gray-400 text-sm mb-4">Lavatório 100% sintético, com design elegante e bordas finas que proporcionam um acabamento delicado e moderno. Resistente e durável.</p>
+                            <button onclick="showProductDetails('sintetico-essenzi')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <!-- Cartão de Produto 2 - Pia Lançamento -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="https://i.ibb.co/t1hj7s3/20250807-2241-Pia-com-Feixe-de-Luz-remix-01k23nakj0e5wr33rb4wrae7f9.png" alt="Pia Lançamento" class="product-card-image">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Pia Lançamento</h3>
+                            <p class="text-gray-400 text-sm mb-4">Pia de cozinha com design inovador, produzida em material sintético de alta qualidade. Fácil de limpar e resistente a impactos.</p>
+                            <button onclick="showProductDetails('sintetico-lancamento')" class="mt-4 w-full bg-amber-500 text-gray-900 py-3 px-6 rounded-lg font-semibold text-lg transition-colors duration-300 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Seção de Detalhes do Produto (Inicialmente Oculta) -->
+        <div id="detailView" class="hidden flex-grow container mx-auto p-8">
+            <button onclick="hideProductDetails()" class="mb-8 px-6 py-3 bg-gray-700 text-white rounded-full hover:bg-amber-500 hover:text-gray-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50 flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <span>Voltar ao Catálogo</span>
+            </button>
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-10 flex flex-col md:flex-row items-center md:items-start gap-12">
+                <!-- Carrossel de Imagens -->
+                <div class="md:w-1/2 carousel-container rounded-xl shadow-xl overflow-hidden">
+                    <img id="detailImage" src="" alt="Imagem do Produto Detalhado" class="w-full h-auto object-cover">
+                    
+                    <!-- Botões de navegação -->
+                    <button onclick="navigateCarousel(-1)" class="carousel-button left">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <!-- Botão Próximo -->
+                    <button onclick="navigateCarousel(1)" class="carousel-button right">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <!-- Indicadores de slide (pontos) -->
+                    <div id="carouselD
